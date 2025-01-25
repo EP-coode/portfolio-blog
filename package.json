@@ -15,10 +15,11 @@
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start"
   },
   "dependencies": {
-    "@payloadcms/db-postgres": "latest",
+    "@payloadcms/db-postgres": "^3.18.0",
     "@payloadcms/next": "^3.18.0",
-    "@payloadcms/payload-cloud": "latest",
+    "@payloadcms/payload-cloud": "^3.18.0",
     "@payloadcms/richtext-lexical": "^3.18.0",
+    "@payloadcms/storage-s3": "^3.18.0",
     "cross-env": "^7.0.3",
     "graphql": "^16.8.1",
     "next": "15.1.5",
