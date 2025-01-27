@@ -1,0 +1,123 @@
+/*Font definitions for frontend project*/
+
+/*============================== ChakaraPetch ================================*/
+@font-face {
+    font-family: 'ChakaraPetch';
+    src: url('/fonts/ChakaraPetch/ChakraPetch-Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ChakaraPetch';
+    src: url('/fonts/ChakaraPetch/ChakraPetch-BoldItalic.ttf');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ChakaraPetch';
+    src: url('/fonts/ChakaraPetch/ChakraPetch-SemiBold.ttf');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ChakaraPetch';
+    src: url('/fonts/ChakaraPetch/ChakraPetch-SemiBoldItalic.ttf');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ChakaraPetch';
+    src: url('/fonts/ChakaraPetch/ChakraPetch-Medium.ttf');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ChakaraPetch';
+    src: url('/fonts/ChakaraPetch/ChakraPetch-MediumItalic.ttf');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ChakaraPetch';
+    src: url('/fonts/ChakaraPetch/ChakraPetch-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ChakaraPetch';
+    src: url('/fonts/ChakaraPetch/ChakraPetch-Italic.ttf');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ChakaraPetch';
+    src: url('/fonts/ChakaraPetch/ChakraPetch-Light.ttf');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ChakaraPetch';
+    src: url('/fonts/ChakaraPetch/ChakraPetch-LightItalic.ttf');
+    font-weight: 300;
+    font-style: italic;
+}
+
+/*============================== ChakaraPetch ================================*/
+/*============================== Rajdhani ====================================*/
+
+@font-face {
+    font-family: 'Rajdhani';
+    src: url('/fonts/Rajdhani/Rajdhani-Light.ttf');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rajdhani';
+    src: url('/fonts/Rajdhani/Rajdhani-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Rajdhani';
+    src: url('/fonts/Rajdhani/Rajdhani-Medium.ttf');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rajdhani';
+    src: url('/fonts/Rajdhani/Rajdhani-SemiBold.ttf');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rajdhani';
+    src: url('/fonts/Rajdhani/Rajdhani-Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/*============================== Rajdhani ====================================*/
+/*============================== LibreBarcode128 ====================================*/
+
+@font-face {
+    font-family: 'LibreBarcode128Text';
+    src: url('/fonts/LibreBarcode128Text/LibreBarcode128Text-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*============================== LibreBarcode128 ====================================*/

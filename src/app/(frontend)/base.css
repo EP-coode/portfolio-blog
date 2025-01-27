@@ -1,0 +1,108 @@
+/*File contains overrides to default html elements*/
+@layer base {
+    /*============== Typography ===============*/
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-chakaraPetch), monospace;
+        color: var(--color-cyberYellow);
+        font-weight: 600;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    h5 {
+        font-size: 1.2rem;
+    }
+
+    h6 {
+        font-size: 1rem;
+    }
+
+    body {
+        font-family: var(--font-chakaraPetch), serif;
+        font-size: var(--text-base);
+        color: var(--color-alabaster);
+        text-align: justify;
+        background-color: var(--color-lightGray);
+        margin: 0;
+        padding: 0;
+    }
+
+    main {
+        display: block;
+    }
+
+    *,
+    ::before,
+    ::after {
+        box-sizing: border-box;
+    }
+
+    a {
+        color: var(--color-cyberCyan);
+        text-decoration: underline;
+
+        &:hover {
+            color: var(--color-cyberRed);
+        }
+    }
+
+    b {
+        color: var(--color-neutral);
+    }
+
+    i {
+        font-weight: 200;
+    }
+
+    ul {
+        list-style-type: square;
+        list-style-position: inside;
+
+        li:has(>ul, >ol) {
+            list-style: none;
+        }
+
+        ul {
+            list-style-type: circle;
+            margin-left: 1rem;
+        }
+
+        & li::marker {
+            color: var(--color-cyberCyan);
+        }
+    }
+
+    ol {
+        list-style-type: decimal;
+        list-style-position: inside;
+
+        li:has(>ul, >ol) {
+            list-style: none;
+        }
+
+        ol {
+            list-style-type: lower-alpha;
+            margin-left: 1rem;
+        }
+
+        & li::marker {
+            color: var(--color-cyberCyan);
+        }
+    }
+
+    /*============== Typography ===============*/
+}
