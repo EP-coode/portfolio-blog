@@ -3,7 +3,7 @@ import Button from '@/modules/common/ui/Button'
 
 export default function DesignSystemPage() {
   return (
-    <div className="content-grid mb-20">
+    <div className="content-grid" style={{ marginTop: 'var(--navHeight)' }}>
       <div className="content">
         <h1>Typography</h1>
         <h1>H1: Lorem Ipsum is simply dummy text.</h1>
@@ -87,14 +87,20 @@ export default function DesignSystemPage() {
       </div>
       <div className="content">
         <h1>Buttons</h1>
-        <div style={{ display: 'flex', gap: '6px', flexDirection: 'row', alignItems: 'start' }}>
-          <Button leftCornerCut="bottom" size="sm">
+        <div
+          style={{
+            display: 'flex',
+            gap: '6px',
+            flexDirection: 'row',
+            alignItems: 'start',
+            flexWrap: 'wrap',
+          }}
+        >
+          <Button leftCornerCut="bottom">Click Me</Button>
+          <Button rightCornerCut="bottom" leftCornerCut="top" color="red">
             Click Me
           </Button>
-          <Button rightCornerCut="bottom" leftCornerCut="top">
-            Click Me
-          </Button>
-          <Button rightCornerCut="bottom" size="lg">
+          <Button rightCornerCut="bottom" color="red">
             Click Me
           </Button>
         </div>

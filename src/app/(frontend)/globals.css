@@ -1,61 +1,95 @@
-@import "fonts.css";
-@import "base.css";
+/* Entry point for Frontend project */
+/* TODO: bring css layers dectaration to top of the file */
+@layer utilities, base, components;
+
+@import 'fonts.css';
+@import 'base.css';
 
 :root {
-    /*Colors*/
-    --color-cyberYellow: #FCEE0A;
-    --color-cyberCyan: #00F0FF;
-    --color-cyberRed: #FD0130;
-    --color-darkBlue: #001417;
-    --color-darkGray: #141414;
-    --color-lightGray: #191919;
-    --color-alabaster: #C1C1C1;
-    --color-neutral: #DDDDDD;
-    --color-white: #FFFFFF;
-    --color-black: #000000;
+  /*Colors*/
+  --color-cyberYellow: #fcee0a;
+  --color-cyberCyan: #00f0ff;
+  --color-cyberRed: #fd0130;
+  --color-darkBlue: #001417;
+  --color-darkGray: #141414;
+  --color-lightGray: #191919;
+  --color-alabaster: #c1c1c1;
+  --color-neutral: #dddddd;
+  --color-white: #ffffff;
+  --color-black: #000000;
 
-    /*Fonts*/
-    --font-chakaraPetch: "ChakaraPetch", monospace;
-    --font-rajdhani: "Rajdhani", sans-serif;
-    --font-barcode128Text: "LibreBarcode128Text", monospace;
-    --text-base: 18px;
-    --text-button: 20px;
+  /*Fonts*/
+  --font-chakaraPetch: 'ChakaraPetch', monospace;
+  --font-rajdhani: 'Rajdhani', sans-serif;
+  --font-barcode128Text: 'LibreBarcode128Text', monospace;
+  --text-base: 18px;
+  --text-button: 20px;
 
-    /*Content*/
-    --contentMaxWidth: 1200px;
-    --contentBreakoutMaxWidth: 1650px;
-    --contentGutter: 1rem;
+  /*Content*/
+  --contentMaxWidth: 1200px;
+  --contentBreakoutMaxWidth: 1650px;
+  --contentGutter: 1rem;
+
+  /* Breakpoints */
+  /* WARN: media queries do not support css variables! */
+  /* Ony SCSS would do the job here becouse postscss variables plugins are crap */
+  --xs: 520px;
+  --sm: 768px;
+  --md: 1024px;
+  --lg: 1280px;
+  --xl: 1640px;
+
+  --navHeight: 86px;
+
+  @media screen and (min-width: 520px) {
+    --navHeight: 96px;
+  }
 }
 
 @layer utilities {
-    .content-grid {
-        display: grid;
-        row-gap: var(--contentGutter);
-        margin: var(--contentGutter) 0;
+  .content-grid {
+    display: grid;
+    row-gap: var(--contentGutter);
+    margin: var(--contentGutter) 0;
 
-        --grid-gutter: var(--contentGutter);
-        --grid-content-max-width: var(--contentMaxWidth);
-        --grid-content-breakout-max-width: var(--contentBreakoutMaxWidth);
-        --grid-breakout-size: calc((var(--grid-content-breakout-max-width) - var(--grid-content-max-width)) / 2);
+    --grid-gutter: var(--contentGutter);
+    --grid-content-max-width: var(--contentMaxWidth);
+    --grid-content-breakout-max-width: var(--contentBreakoutMaxWidth);
+    --grid-breakout-size: calc(
+      (var(--grid-content-breakout-max-width) - var(--grid-content-max-width)) / 2
+    );
 
-        grid-template-columns:
-    [full-width-start] minmax(var(--grid-gutter), 1fr)
-    [breakout-start] minmax(0, var(--grid-breakout-size))
-    [content-start] min(var(--grid-content-max-width), 100% - var(--grid-gutter) * 2) [content-end]
-    minmax(0, var(--grid-breakout-size)) [breakout-end]
-    minmax(var(--grid-gutter), 1fr) [full-width-end];
+    grid-template-columns:
+      [full-width-start] minmax(var(--grid-gutter), 1fr)
+      [breakout-start] minmax(0, var(--grid-breakout-size))
+      [content-start] min(var(--grid-content-max-width), 100% - var(--grid-gutter) * 2)
+      [content-end]
+      minmax(0, var(--grid-breakout-size)) [breakout-end]
+      minmax(var(--grid-gutter), 1fr) [full-width-end];
 
-        & > :not(.full-width, .breakout) {
-            grid-column: content;
-        }
-
-        & > .full-width {
-            grid-column: full-width;
-        }
-
-        & > .breakout {
-            grid-column: breakout;
-        }
+    & > :not(.full-width, .breakout) {
+      grid-column: content;
     }
-}
 
+    & > .full-width {
+      grid-column: full-width;
+    }
+
+    & > .breakout {
+      grid-column: breakout;
+    }
+  }
+
+  .svgDrawLogoAnimation path {
+    stroke-dasharray: 30;
+    stroke-dashoffset: 30;
+    animation: dash 0.8s linear forwards;
+    animation-delay: 0.3s;
+  }
+
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+}

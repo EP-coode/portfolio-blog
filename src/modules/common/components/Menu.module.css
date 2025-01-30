@@ -1,35 +1,67 @@
-
 .menu {
-    position: sticky;
+  background: linear-gradient(0deg, transparent, color-mix(in srgb, black, transparent 10%));
+  width: 100%;
+  padding: var(--contentGutter);
+  transition: transform 500ms;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
     top: 0;
-    background: linear-gradient(0deg, transparent, color-mix(in srgb, black, transparent 10%));
-    padding: var(--contentGutter);
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    mask: linear-gradient(0deg, transparent, transparent 10%, black 50%);
+    backdrop-filter: blur(3px);
+  }
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-
-    &:before {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        mask: linear-gradient(0deg, transparent, transparent 10%, black 50%);
-        backdrop-filter: blur(3px);
-    }
+  &.hide {
+    transform: translateY(-100%);
+  }
 }
 
 .menuContent {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--contentGutter);
-    max-width: var(--contentMaxWidth);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--contentGutter);
+  max-width: var(--contentMaxWidth);
+}
+
+.menuLogo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-self: center;
+  gap: var(--contentGutter);
+}
+
+.logoImg,
+.logoLink {
+  width: 54px;
+  height: 54px;
+
+  @media screen and (min-width: 520px) {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+.logoText {
+  color: var(--color-cyberYellow);
+  font-size: 1.7rem;
+  display: none;
+
+  @media screen and (min-width: 520px) {
+    display: block;
+  }
 }

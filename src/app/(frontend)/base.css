@@ -119,7 +119,7 @@
   }
 
   ::-webkit-scrollbar {
-    width: 0.5rem;
+    width: 0.3rem;
   }
 
   ::-webkit-scrollbar-track {
@@ -128,6 +128,7 @@
 
   ::-webkit-scrollbar-thumb {
     background-color: var(--color-cyberYellow);
+    cursor: grab;
   }
 
   ::selection {

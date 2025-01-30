@@ -1,17 +1,22 @@
 import React from 'react'
-import Button, { ButtonProps } from '@/modules/common/ui/Button'
+import { ButtonProps } from '@/modules/common/ui/Button'
 
 import styles from './ButtonGroup.module.css'
+import clsx from 'clsx'
 
 interface ButtonGroupProps extends React.HTMLProps<HTMLDivElement> {
-  children?: React.ReactElement<typeof Button>[]
+  children?: React.ReactNode[]
 }
 
 function ButtonGroup({ children, ...props }: ButtonGroupProps) {
   const modifiedChildren = React.Children.toArray(children).map((child, i) => {
-    return React.isValidElement(child)
-      ? React.cloneElement(child, { className: styles.buttonGroupButton } as ButtonProps)
-      : child
+    if (!React.isValidElement(child)) return child
+
+    const childProps = child.props as ButtonProps
+
+    return React.cloneElement(child, {
+      className: clsx(childProps.className ?? '', styles.buttonGroupButton),
+    } as ButtonProps)
   })
 
   return (

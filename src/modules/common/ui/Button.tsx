@@ -10,7 +10,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   leftCornerCut?: 'top' | 'bottom'
   rightCornerCut?: 'top' | 'bottom'
   active?: boolean
-  size?: 'sm' | 'md' | 'lg'
+  color?: 'cyan' | 'red'
   cornerCutSize?: string
 }
 
@@ -56,9 +56,8 @@ function Button({
   className,
   leftCornerCut,
   rightCornerCut,
-  cornerCutSize = '14px',
   active = false,
-  size = 'md',
+  color = 'cyan',
   ref,
   ...props
 }: ButtonProps) {
@@ -69,17 +68,14 @@ function Button({
   return (
     <Comp
       role="button"
-      style={
-        { clipPath: cornerCutPolygon, '--cornerCutSize': cornerCutSize } as React.CSSProperties
-      }
+      style={{ clipPath: cornerCutPolygon } as React.CSSProperties}
       className={clsx(className, styles.button, {
         [styles.leftCornerCutTop]: leftCornerCut == 'top',
         [styles.leftCornerCutBottom]: leftCornerCut == 'bottom',
         [styles.rightCornerCutTop]: rightCornerCut == 'top',
         [styles.rightCornerCutBottom]: rightCornerCut == 'bottom',
         [styles.active]: !!active,
-        [styles.sm]: size == 'sm',
-        [styles.lg]: size == 'lg',
+        [styles.red]: color == 'red',
       })}
       ref={ref}
       {...props}
