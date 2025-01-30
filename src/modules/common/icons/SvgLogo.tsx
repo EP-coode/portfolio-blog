@@ -1,7 +1,14 @@
 import * as React from 'react'
 
-export const SvgLogo = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="none" viewBox="0 0 50 50">
+export const SvgLogo = ({ ...props }: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="50"
+    height="50"
+    fill="none"
+    viewBox="0 0 50 50"
+    {...props}
+  >
     <g clipPath="url(#clip0_31_7)">
       <g filter="url(#filter0_d_31_7)">
         <path

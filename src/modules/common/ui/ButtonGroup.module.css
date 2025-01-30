@@ -1,0 +1,22 @@
+.buttonGroup {
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.buttonGroupButton {
+  &:not(:first-child, :last-child) {
+    border-right: 0;
+    border-left: 0;
+    margin: 0 -1px
+  }
+
+  &:first-child:not(:last-child) {
+    border-right: 0;
+  }
+
+  &:last-child:not(:first-child) {
+    border-left: 0;
+  }
+}

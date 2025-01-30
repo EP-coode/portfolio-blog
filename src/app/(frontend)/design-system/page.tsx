@@ -14,13 +14,13 @@ export default function DesignSystemPage() {
         <h6>H6: Lorem Ipsum is simply dummy text.</h6>
         <p>
           Lorem Ipsum is simply <b>dummy</b> text of the printing and typesetting industry. Lorem
-          Ipsum has been the industry&aposs standard dummy text ever since the 1500s, when an unknown
-          printer took a galley of type and <i>scrambled</i> it to make a type specimen book. It has
-          survived not only five centuries, but also the leap into electronic typesetting, remaining
-          essentially <a href="https://www.google.pl/">unchanged</a>. It was popularised in the
-          1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-          recently with desktop publishing software like Aldus PageMaker including versions of Lorem
-          Ipsum
+          Ipsum has been the industry&aposs standard dummy text ever since the 1500s, when an
+          unknown printer took a galley of type and <i>scrambled</i> it to make a type specimen
+          book. It has survived not only five centuries, but also the leap into electronic
+          typesetting, remaining essentially <a href="https://www.google.pl/">unchanged</a>. It was
+          popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+          passages, and more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum
         </p>
         <p className="font-barcode128Text">Barcode goes here</p>
       </div>
@@ -28,26 +28,26 @@ export default function DesignSystemPage() {
         <h1>Content full width</h1>
         <p>
           Lorem Ipsum is simply <b>dummy</b> text of the printing and typesetting industry. Lorem
-          Ipsum has been the industry&aposs standard dummy text ever since the 1500s, when an unknown
-          printer took a galley of type and <i>scrambled</i> it to make a type specimen book. It has
-          survived not only five centuries, but also the leap into electronic typesetting, remaining
-          essentially <a href="https://www.google.pl/">unchanged</a>. It was popularised in the
-          1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-          recently with desktop publishing software like Aldus PageMaker including versions of Lorem
-          Ipsum
+          Ipsum has been the industry&aposs standard dummy text ever since the 1500s, when an
+          unknown printer took a galley of type and <i>scrambled</i> it to make a type specimen
+          book. It has survived not only five centuries, but also the leap into electronic
+          typesetting, remaining essentially <a href="https://www.google.pl/">unchanged</a>. It was
+          popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+          passages, and more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum
         </p>
       </div>
       <div className="breakout">
         <h1>Content breakout</h1>
         <p>
           Lorem Ipsum is simply <b>dummy</b> text of the printing and typesetting industry. Lorem
-          Ipsum has been the industry&aposs standard dummy text ever since the 1500s, when an unknown
-          printer took a galley of type and <i>scrambled</i> it to make a type specimen book. It has
-          survived not only five centuries, but also the leap into electronic typesetting, remaining
-          essentially <a href="https://www.google.pl/">unchanged</a>. It was popularised in the
-          1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-          recently with desktop publishing software like Aldus PageMaker including versions of Lorem
-          Ipsum
+          Ipsum has been the industry&aposs standard dummy text ever since the 1500s, when an
+          unknown printer took a galley of type and <i>scrambled</i> it to make a type specimen
+          book. It has survived not only five centuries, but also the leap into electronic
+          typesetting, remaining essentially <a href="https://www.google.pl/">unchanged</a>. It was
+          popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+          passages, and more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum
         </p>
       </div>
       <div className="content">
@@ -87,10 +87,16 @@ export default function DesignSystemPage() {
       </div>
       <div className="content">
         <h1>Buttons</h1>
-        <div style={{ display: 'flex', gap: '6px' }}>
-          <Button>Click Me</Button>
-          <Button>Click Me</Button>
-          <Button>Click Me</Button>
+        <div style={{ display: 'flex', gap: '6px', flexDirection: 'row', alignItems: 'start' }}>
+          <Button leftCornerCut="bottom" size="sm">
+            Click Me
+          </Button>
+          <Button rightCornerCut="bottom" leftCornerCut="top">
+            Click Me
+          </Button>
+          <Button rightCornerCut="bottom" size="lg">
+            Click Me
+          </Button>
         </div>
       </div>
     </div>
