@@ -1,8 +1,6 @@
 import * as React from 'react'
 
-export interface SvgLogoProps extends React.SVGProps<SVGSVGElement> {}
-
-export const SvgLogo = ({ ...props }: SvgLogoProps) => (
+export const SvgLogo = ({ ...props }: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="50"

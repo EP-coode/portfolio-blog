@@ -11,6 +11,7 @@ import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 
 import { s3Storage } from '@payloadcms/storage-s3'
+import { AboutMe } from './globals/AboutMe'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -21,8 +22,13 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
+    livePreview: {
+      url: 'http://localhost:3000',
+      globals: ['aboutMe'],
+    },
   },
   collections: [Users, Media],
+  globals: [AboutMe],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

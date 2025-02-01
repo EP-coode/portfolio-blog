@@ -7,10 +7,12 @@
 .mainLayoutContent {
   flex-grow: 1;
   overflow-x: auto;
+  z-index: var(--layer-base);
 }
 
 .mainNav {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: var(--layer-nav);
 }

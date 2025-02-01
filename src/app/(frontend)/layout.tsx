@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={styles.mainLayout}>
-        <Menu></Menu>
+        <Menu className={styles.mainNav}></Menu>
         <main className={styles.mainLayoutContent}>{children}</main>
         <Footer></Footer>
       </body>

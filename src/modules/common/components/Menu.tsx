@@ -11,9 +11,8 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 
-export interface MenuProps extends React.HTMLProps<HTMLDivElement> {}
 
-function Menu({ className, ...props }: MenuProps) {
+function Menu({ className, ...props }: React.HTMLProps<HTMLDivElement>) {
   const pathName = usePathname()
 
   return (

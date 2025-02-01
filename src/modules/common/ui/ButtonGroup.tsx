@@ -9,7 +9,7 @@ interface ButtonGroupProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 function ButtonGroup({ children, ...props }: ButtonGroupProps) {
-  const modifiedChildren = React.Children.toArray(children).map((child, i) => {
+  const modifiedChildren = React.Children.toArray(children).map((child) => {
     if (!React.isValidElement(child)) return child
 
     const childProps = child.props as ButtonProps

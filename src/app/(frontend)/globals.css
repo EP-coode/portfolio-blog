@@ -1,9 +1,10 @@
 /* Entry point for Frontend project */
-/* TODO: bring css layers dectaration to top of the file */
+/* TODO: bring css layers declaration to top of the file */
 @layer utilities, base, components;
 
 @import 'fonts.css';
 @import 'base.css';
+@import 'animations.css';
 
 :root {
   /*Colors*/
@@ -29,6 +30,10 @@
   --contentMaxWidth: 1200px;
   --contentBreakoutMaxWidth: 1650px;
   --contentGutter: 1rem;
+
+  /* Z-index layers */
+  --layer-base: 1;
+  --layer-nav: 100;
 
   /* Breakpoints */
   /* WARN: media queries do not support css variables! */

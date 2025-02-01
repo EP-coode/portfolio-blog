@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useLayoutEffect, useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 
 export function useScrollProgress() {
   const [scrollProgress, setScrollProgress] = useState(0)

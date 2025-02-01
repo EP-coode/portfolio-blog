@@ -1,5 +1,7 @@
 import { FaceIcon, ImageIcon, SunIcon } from '@radix-ui/react-icons'
-import Button from '@/modules/common/ui/Button'
+import Button from '@/modules/common/ui/Button';
+
+import styles from './page.module.css';
 
 export default function DesignSystemPage() {
   return (
@@ -22,7 +24,7 @@ export default function DesignSystemPage() {
           passages, and more recently with desktop publishing software like Aldus PageMaker
           including versions of Lorem Ipsum
         </p>
-        <p className="font-barcode128Text">Barcode goes here</p>
+        <p className={styles.barcodeExample}>Barcode goes here</p>
       </div>
       <div className="full-width">
         <h1>Content full width</h1>

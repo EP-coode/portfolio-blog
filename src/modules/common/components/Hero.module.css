@@ -1,4 +1,40 @@
 .heroContainer {
-  background-color: var(--color-lightGray);
+  background-color: var(--color-black);
   height: 100vh;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.heroText {
+  max-width: 20rem;
+  text-align: center;
+  z-index: 1;
+}
+
+.particlesWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+  :global {
+    animation: fadeIn 1.5s;
+  }
+}
+
+.barcodeText {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  font-family: LibreBarcode128Text;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 1.5rem;
 }
