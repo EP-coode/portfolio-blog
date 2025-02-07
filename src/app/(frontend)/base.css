@@ -118,6 +118,47 @@
     }
   }
 
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid color-mix(in srgb, var(--color-alabaster) 50%, transparent);
+    margin: 1.5rem 0;
+    padding: 0;
+  }
+
+  blockquote {
+    position: relative;
+    font-style: italic;
+    margin: 0;
+    padding: 1rem 0px 1rem 2rem;
+    background-color: var(--color-lightGray);
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background-color: var(--color-cyberYellow);
+    }
+
+    &:before {
+      content: '"';
+      display: block;
+      position: absolute;
+      left: 0.5rem;
+      top: 0;
+      height: 100%;
+      line-height: 1;
+      font-size: 3rem;
+      font-weight: 200;
+      opacity: 0.5;
+    }
+  }
+
   ::-webkit-scrollbar {
     width: 0.3rem;
   }

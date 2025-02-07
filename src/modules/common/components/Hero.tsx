@@ -7,8 +7,9 @@ import Particles, { initParticlesEngine } from '@tsparticles/react'
 // TODO: move to dynamic import
 import { loadSlim } from '@tsparticles/slim'
 import { IOptions, RecursivePartial } from '@tsparticles/engine'
+import clsx from 'clsx'
 
-export default function Hero() {
+export default function Hero({ className, ...props }: React.HTMLProps<HTMLDivElement>) {
   const glitchElemRef = useRef(null)
   const [particlesInitialized, setParticlesInitialized] = useState(false)
   const glitchConfig = useMemo<GlitchPartialOptions>(
@@ -138,7 +139,7 @@ export default function Hero() {
   })
 
   return (
-    <div className={styles.heroContainer}>
+    <div className={clsx(styles.heroContainer, className)} {...props}>
       {particlesInitialized && (
         <Particles
           id="hero_bg_particles"

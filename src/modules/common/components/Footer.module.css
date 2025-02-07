@@ -1,6 +1,37 @@
-
 .footer {
-    background-color: var(--color-darkBlue);
-    width: 100%;
-    min-height: 200px;
+  background-color: var(--color-darkBlue);
+  width: 100%;
+  margin-bottom: 0;
+  padding: var(--contentGutter) 0;
+}
+
+.footerContentWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.linkContainer {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.linkIcon {
+  --size: 25px;
+  width: var(--size);
+  height: var(--size);
+
+  color: var(--color-alabaster);
+
+  &:hover {
+    color: var(--color-cyberCyan);
+  }
+}
+
+.footerCopyRight {
+  font-size: 0.75rem;
 }

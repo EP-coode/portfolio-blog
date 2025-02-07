@@ -225,7 +225,15 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
  */
 export interface AboutMe {
   id: number;
-  layout?: ContentBlock[] | null;
+  layout: ContentBlock[];
+  meta?: {
+    title?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+    description?: string | null;
+  };
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -234,7 +242,21 @@ export interface AboutMe {
  * via the `definition` "ContentBlock".
  */
 export interface ContentBlock {
-  text?: string | null;
+  richText?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'content';
@@ -249,6 +271,13 @@ export interface AboutMeSelect<T extends boolean = true> {
     | {
         content?: T | ContentBlockSelect<T>;
       };
+  meta?:
+    | T
+    | {
+        title?: T;
+        image?: T;
+        description?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
@@ -258,7 +287,7 @@ export interface AboutMeSelect<T extends boolean = true> {
  * via the `definition` "ContentBlock_select".
  */
 export interface ContentBlockSelect<T extends boolean = true> {
-  text?: T;
+  richText?: T;
   id?: T;
   blockName?: T;
 }

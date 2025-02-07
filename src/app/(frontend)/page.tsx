@@ -9,8 +9,8 @@ export default async function HomePage() {
   const layoutData = aboutMeData.layout
 
   return (
-    <div>
-      <Hero></Hero>
+    <div className="content-grid" style={{ marginTop: 0 }}>
+      <Hero className="full-width"></Hero>
       <RenderBlocks blocks={layoutData}></RenderBlocks>
     </div>
   )

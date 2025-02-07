@@ -12,6 +12,7 @@ import { Media } from './collections/Media'
 
 import { s3Storage } from '@payloadcms/storage-s3'
 import { AboutMe } from './globals/AboutMe'
+import { seoPlugin } from '@payloadcms/plugin-seo'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -42,6 +43,10 @@ export default buildConfig({
   sharp,
   plugins: [
     payloadCloudPlugin(),
+    seoPlugin({
+      generateTitle: ({ doc }) => `${doc.title}`,
+      generateDescription: ({ doc }) => doc.excerpt
+    }),
     s3Storage({
       collections: {
         media: true,
