@@ -33,6 +33,7 @@
     "@tsparticles/slim": "^3.8.1",
     "clsx": "^2.1.1",
     "cross-env": "^7.0.3",
+    "date-fns": "^4.1.0",
     "graphql": "^16.8.1",
     "next": "15.1.5",
     "payload": "^3.18.0",

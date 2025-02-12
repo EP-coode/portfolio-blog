@@ -12,6 +12,10 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="shortcut icon" href="/icons/favicon.ico" />
+        <link rel="shortcut icon" href="/icons/favicon.svg" type="image/svg+xml" />
+      </head>
       <body className={styles.mainLayout}>
         <Menu className={styles.mainNav}></Menu>
         <main className={styles.mainLayoutContent}>{children}</main>

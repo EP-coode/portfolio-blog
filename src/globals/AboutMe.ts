@@ -1,6 +1,7 @@
-import { Content } from '@/blocks/Content/config'
-// import { dynamicBlocks } from '@/blocks/RenderBlocks'
 import { GlobalConfig } from 'payload'
+
+import { Content } from '@/blocks/Content/config'
+import { TechList } from '@/blocks/TechList/config'
 
 import {
   MetaDescriptionField,
@@ -9,6 +10,7 @@ import {
   OverviewField,
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
+import { TimeLine } from '@/blocks/Timeline/config'
 
 export const AboutMe: GlobalConfig = {
   slug: 'aboutMe',
@@ -21,7 +23,7 @@ export const AboutMe: GlobalConfig = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [Content],
+              blocks: [Content, TechList, TimeLine],
               required: true,
               admin: {
                 initCollapsed: true,
@@ -61,10 +63,3 @@ export const AboutMe: GlobalConfig = {
     },
   ],
 }
-
-// {
-//   name: 'layout',
-//   type: 'blocks',
-//   blocks: [Content],
-//   label: 'Content',
-// }

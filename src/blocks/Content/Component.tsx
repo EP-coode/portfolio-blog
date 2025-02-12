@@ -1,15 +1,10 @@
 import React from 'react'
 
+import type { ContentBlock as ContentBlockProps } from '@/payload-types'
 import { RichText as RichTextWithoutBlocks } from '@payloadcms/richtext-lexical/react'
-import { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical'
 
-type Props = {
-  data: SerializedEditorState
-  enableGutter?: boolean
-  enableProse?: boolean
-} & React.HTMLAttributes<HTMLDivElement>
+export function ContentBlock(props: ContentBlockProps) {
+  const { richText } = props
 
-// TODO: add handling of checklist block
-export function ContentBlock(props: Props) {
-  return <RichTextWithoutBlocks {...props}></RichTextWithoutBlocks>
+  return richText && <RichTextWithoutBlocks data={richText}></RichTextWithoutBlocks>
 }

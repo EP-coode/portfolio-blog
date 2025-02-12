@@ -225,7 +225,7 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
  */
 export interface AboutMe {
   id: number;
-  layout: ContentBlock[];
+  layout: (ContentBlock | TechListBlock | TimeLine)[];
   meta?: {
     title?: string | null;
     /**
@@ -263,6 +263,56 @@ export interface ContentBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TechListBlock".
+ */
+export interface TechListBlock {
+  techListItems?:
+    | {
+        displayName?: string | null;
+        techIcon?: (number | null) | Media;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'techList';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TimeLine".
+ */
+export interface TimeLine {
+  timeLineItems?:
+    | {
+        roleName: string;
+        companyName: string;
+        companyLink: string;
+        startDate: string;
+        endDate?: string | null;
+        description?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'timeLine';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "aboutMe_select".
  */
 export interface AboutMeSelect<T extends boolean = true> {
@@ -270,6 +320,8 @@ export interface AboutMeSelect<T extends boolean = true> {
     | T
     | {
         content?: T | ContentBlockSelect<T>;
+        techList?: T | TechListBlockSelect<T>;
+        timeLine?: T | TimeLineSelect<T>;
       };
   meta?:
     | T
@@ -288,6 +340,40 @@ export interface AboutMeSelect<T extends boolean = true> {
  */
 export interface ContentBlockSelect<T extends boolean = true> {
   richText?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TechListBlock_select".
+ */
+export interface TechListBlockSelect<T extends boolean = true> {
+  techListItems?:
+    | T
+    | {
+        displayName?: T;
+        techIcon?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TimeLine_select".
+ */
+export interface TimeLineSelect<T extends boolean = true> {
+  timeLineItems?:
+    | T
+    | {
+        roleName?: T;
+        companyName?: T;
+        companyLink?: T;
+        startDate?: T;
+        endDate?: T;
+        description?: T;
+        id?: T;
+      };
   id?: T;
   blockName?: T;
 }
