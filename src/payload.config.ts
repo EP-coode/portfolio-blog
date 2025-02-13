@@ -45,7 +45,7 @@ export default buildConfig({
     payloadCloudPlugin(),
     seoPlugin({
       generateTitle: ({ doc }) => `${doc.title}`,
-      generateDescription: ({ doc }) => doc.excerpt
+      generateDescription: ({ doc }) => doc.excerpt,
     }),
     s3Storage({
       collections: {

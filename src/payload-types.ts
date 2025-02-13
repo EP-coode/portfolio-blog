@@ -228,11 +228,8 @@ export interface AboutMe {
   layout: (ContentBlock | TechListBlock | TimeLine)[];
   meta?: {
     title?: string | null;
-    /**
-     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
-     */
-    image?: (number | null) | Media;
     description?: string | null;
+    keywords?: string | null;
   };
   updatedAt?: string | null;
   createdAt?: string | null;
@@ -329,8 +326,8 @@ export interface AboutMeSelect<T extends boolean = true> {
     | T
     | {
         title?: T;
-        image?: T;
         description?: T;
+        keywords?: T;
       };
   updatedAt?: T;
   createdAt?: T;

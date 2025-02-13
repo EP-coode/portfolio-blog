@@ -5,7 +5,6 @@ import { TechList } from '@/blocks/TechList/config'
 
 import {
   MetaDescriptionField,
-  MetaImageField,
   MetaTitleField,
   OverviewField,
   PreviewField,
@@ -41,14 +40,18 @@ export const AboutMe: GlobalConfig = {
               descriptionPath: 'meta.description',
               imagePath: 'meta.image',
             }),
+
             MetaTitleField({
               hasGenerateFn: true,
             }),
-            MetaImageField({
-              relationTo: 'media',
-            }),
 
             MetaDescriptionField({}),
+
+            {
+              type: 'text',
+              name: 'keywords',
+            },
+
             PreviewField({
               // if the `generateUrl` function is configured
               hasGenerateFn: true,
