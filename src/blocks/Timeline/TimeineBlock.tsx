@@ -19,11 +19,14 @@ const DATE_FORMAT = 'MMM yyyy'
 export const TimelineBlock = (props: TimelineBlockProps) => {
   const { timeLineItems } = props
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.timelineWrapper}>
-        {timeLineItems?.map((item) => (
-          <TimelineBlockItem {...item} key={item.id}></TimelineBlockItem>
-        ))}
+    <div className={styles.blockWrapper}>
+      <h2 className={styles.sectionTitle}>{props.title}</h2>
+      <div className={styles.timelineAdditionalWrapper}>
+        <div className={styles.timelineWrapper}>
+          {timeLineItems?.map((item) => (
+            <TimelineBlockItem {...item} key={item.id}></TimelineBlockItem>
+          ))}
+        </div>
       </div>
     </div>
   )
@@ -50,7 +53,7 @@ const TimelineBlockItem = ({
       <div className={styles.timeRange}>
         {startDateFormated} - {endDateFormated}
       </div>
-      <h4 className={styles.roleTitle}>{roleName}</h4>
+      <h3 className={styles.roleTitle}>{roleName}</h3>
       <Link
         className={styles.companyName}
         href={companyLink}

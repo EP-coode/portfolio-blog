@@ -1,7 +1,9 @@
+import { WorkInProgressPlaceholder } from '@/modules/common/components/WorkInProgressPlaceholder'
+
 export default function BlogPage() {
   return (
     <>
-      <h1>Hello Blog Page</h1>
+      <WorkInProgressPlaceholder />
     </>
   )
 }

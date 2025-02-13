@@ -6,5 +6,5 @@ import { RichText as RichTextWithoutBlocks } from '@payloadcms/richtext-lexical/
 export function ContentBlock(props: ContentBlockProps) {
   const { richText } = props
 
-  return richText && <RichTextWithoutBlocks data={richText}></RichTextWithoutBlocks>
+  return richText ? <RichTextWithoutBlocks data={richText}></RichTextWithoutBlocks> : <></>
 }

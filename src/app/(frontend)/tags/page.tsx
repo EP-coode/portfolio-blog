@@ -1,7 +1,9 @@
+import { WorkInProgressPlaceholder } from '@/modules/common/components/WorkInProgressPlaceholder'
+
 export default function TagPage() {
   return (
     <>
-      <h1>Hello Tag Page</h1>
+      <WorkInProgressPlaceholder />
     </>
   )
 }

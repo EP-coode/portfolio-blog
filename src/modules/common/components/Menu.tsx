@@ -11,7 +11,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 
-
 function Menu({ className, ...props }: React.HTMLProps<HTMLDivElement>) {
   const pathName = usePathname()
 
@@ -19,7 +18,7 @@ function Menu({ className, ...props }: React.HTMLProps<HTMLDivElement>) {
     <nav className={clsx(styles.menu, className)} {...props}>
       <div className={styles.menuContent}>
         <div className={styles.menuLogo}>
-          <Link href="/" className={clsx(styles.logoLink, 'svgDrawLogoAnimation')}>
+          <Link href="/" className={clsx(styles.logoLink, 'svgDrawLogoAnimation')} title="home">
             <SvgLogo className={styles.logoImg}></SvgLogo>
           </Link>
           <span className={styles.logoText}>Ernest Przybył</span>
@@ -32,13 +31,24 @@ function Menu({ className, ...props }: React.HTMLProps<HTMLDivElement>) {
               active={pathName == '/'}
               asChild
             >
-              <Link href="/">About me</Link>
+              <Link href="/" title="home">
+                About me
+              </Link>
             </Button>
-            <Button className={styles.menuButton} active={pathName == '/design-system'} asChild>
-              <Link href="/design-system">Tags</Link>
+            <Button className={styles.menuButton} active={pathName == '/tags'} asChild>
+              <Link href="/tags" title="tags">
+                Tags
+              </Link>
             </Button>
-            <Button className={styles.menuButton} rightCornerCut="top">
-              Blog
+            <Button
+              className={styles.menuButton}
+              active={pathName == '/blog'}
+              rightCornerCut="top"
+              asChild
+            >
+              <Link href="/blog" title="blog">
+                Blog
+              </Link>
             </Button>
           </ButtonGroup>
         </div>

@@ -266,6 +266,7 @@ export interface ContentBlock {
  * via the `definition` "TechListBlock".
  */
 export interface TechListBlock {
+  title?: string | null;
   techListItems?:
     | {
         displayName?: string | null;
@@ -282,6 +283,7 @@ export interface TechListBlock {
  * via the `definition` "TimeLine".
  */
 export interface TimeLine {
+  title?: string | null;
   timeLineItems?:
     | {
         roleName: string;
@@ -348,6 +350,7 @@ export interface ContentBlockSelect<T extends boolean = true> {
  * via the `definition` "TechListBlock_select".
  */
 export interface TechListBlockSelect<T extends boolean = true> {
+  title?: T;
   techListItems?:
     | T
     | {
@@ -363,6 +366,7 @@ export interface TechListBlockSelect<T extends boolean = true> {
  * via the `definition` "TimeLine_select".
  */
 export interface TimeLineSelect<T extends boolean = true> {
+  title?: T;
   timeLineItems?:
     | T
     | {

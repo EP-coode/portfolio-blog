@@ -58,6 +58,11 @@ export const TimeLine: Block = {
   interfaceName: 'TimeLine',
   fields: [
     {
+      type: 'text',
+      name: 'title',
+      label: 'Section title',
+    },
+    {
       type: 'array',
       name: 'timeLineItems',
       label: 'Time line entry',

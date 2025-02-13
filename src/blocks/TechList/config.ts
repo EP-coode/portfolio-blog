@@ -22,6 +22,11 @@ export const TechList: Block = {
   interfaceName: 'TechListBlock',
   fields: [
     {
+      type: 'text',
+      name: 'title',
+      label: 'Section title'
+    },
+    {
       type: 'array',
       name: 'techListItems',
       label: 'Technology list',
