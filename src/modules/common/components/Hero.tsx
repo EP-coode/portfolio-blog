@@ -152,6 +152,7 @@ export default function Hero({ className, ...props }: React.HTMLProps<HTMLDivEle
       <h1 className={styles.heroText}>
        {t('start')} <span ref={glitchElemRef}>{t('glitchText')}</span> {t('end')}
       </h1>
+      {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}
       <span className={styles.barcodeText}>//module/hero...</span>
     </div>
   )

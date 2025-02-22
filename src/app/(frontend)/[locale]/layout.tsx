@@ -22,7 +22,7 @@ export default async function RootLayout({
   children: React.ReactNode
   params: { locale: 'en' | 'pl' }
 }) {
-  if (!routing.locales.includes(locale as any)) {
+  if (!routing.locales.includes(locale as 'pl' | 'en')) {
     notFound()
   }
 
