@@ -1,18 +1,24 @@
 'use client'
 
 import React from 'react'
-
-import styles from './Menu.module.css'
-
-import { SvgLogo } from '@/modules/common/icons/SvgLogo'
-import Button from '@/modules/common/ui/Button'
-import ButtonGroup from '@/modules/common/ui/ButtonGroup'
-import Link from 'next/link'
+// import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 
+// import { useLocale } from '@/modules/common/hooks/useLocale'
+import { SvgLogo } from '@/modules/common/icons/SvgLogo'
+import Button from '@/modules/common/ui/Button'
+import ButtonGroup from '@/modules/common/ui/ButtonGroup'
+
+import { Link } from '@/i18n/routing'
+
+import styles from './Menu.module.css'
+import { useLocale, useTranslations } from 'next-intl'
+
 function Menu({ className, ...props }: React.HTMLProps<HTMLDivElement>) {
   const pathName = usePathname()
+  const locale = useLocale()
+  const t = useTranslations('menu')
 
   return (
     <nav className={clsx(styles.menu, className)} {...props}>
@@ -28,26 +34,26 @@ function Menu({ className, ...props }: React.HTMLProps<HTMLDivElement>) {
             <Button
               className={styles.menuButton}
               leftCornerCut="bottom"
-              active={pathName == '/'}
+              active={pathName === `/${locale}`}
               asChild
             >
-              <Link href="/" title="home">
-                About me
+              <Link href="/" title="home" locale={locale}>
+                {t('aboutMe')}
               </Link>
             </Button>
-            <Button className={styles.menuButton} active={pathName == '/tags'} asChild>
+            <Button className={styles.menuButton} active={pathName == `/${locale}/tags`} asChild>
               <Link href="/tags" title="tags">
-                Tags
+                {t('tags')}
               </Link>
             </Button>
             <Button
               className={styles.menuButton}
-              active={pathName == '/blog'}
+              active={pathName == `/${locale}/blog`}
               rightCornerCut="top"
               asChild
             >
-              <Link href="/blog" title="blog">
-                Blog
+              <Link href="/blog" title="blog" locale={locale}>
+                {t('blog')}
               </Link>
             </Button>
           </ButtonGroup>

@@ -3,6 +3,7 @@ import { Block, Field } from 'payload'
 export const techListItem: Field[] = [
   {
     type: 'text',
+    localized: true,
     name: 'displayName',
   },
   {
@@ -24,7 +25,8 @@ export const TechList: Block = {
     {
       type: 'text',
       name: 'title',
-      label: 'Section title'
+      label: 'Section title',
+      localized: true,
     },
     {
       type: 'array',

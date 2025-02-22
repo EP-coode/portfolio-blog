@@ -10,6 +10,7 @@
     font-family: var(--font-chakaraPetch), monospace;
     color: var(--color-cyberYellow);
     font-weight: 600;
+    text-align: left;
   }
 
   h1 {

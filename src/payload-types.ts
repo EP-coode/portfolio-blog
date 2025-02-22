@@ -34,7 +34,7 @@ export interface Config {
   globalsSelect: {
     aboutMe: AboutMeSelect<false> | AboutMeSelect<true>;
   };
-  locale: null;
+  locale: 'en' | 'pl';
   user: User & {
     collection: 'users';
   };
@@ -231,6 +231,7 @@ export interface AboutMe {
     description?: string | null;
     keywords?: string | null;
   };
+  _status?: ('draft' | 'published') | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -329,6 +330,7 @@ export interface AboutMeSelect<T extends boolean = true> {
         description?: T;
         keywords?: T;
       };
+  _status?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

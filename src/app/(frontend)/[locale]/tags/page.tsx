@@ -1,6 +1,6 @@
 import { WorkInProgressPlaceholder } from '@/modules/common/components/WorkInProgressPlaceholder'
 
-export default function TagPage() {
+export default async function TagPage() {
   return (
     <>
       <WorkInProgressPlaceholder />

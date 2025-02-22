@@ -14,6 +14,9 @@ import { s3Storage } from '@payloadcms/storage-s3'
 import { AboutMe } from './globals/AboutMe'
 import { seoPlugin } from '@payloadcms/plugin-seo'
 
+import { en } from '@payloadcms/translations/languages/en'
+import { pl } from '@payloadcms/translations/languages/pl'
+
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
@@ -40,6 +43,24 @@ export default buildConfig({
       connectionString: process.env.DATABASE_URI || '',
     },
   }),
+  i18n: {
+    fallbackLanguage: 'en',
+    supportedLanguages: { en, pl },
+  },
+  localization: {
+    defaultLocale: 'en',
+    fallback: true,
+    locales: [
+      {
+        code: 'en',
+        label: 'English',
+      },
+      {
+        code: 'pl',
+        label: 'Polski',
+      },
+    ],
+  },
   sharp,
   plugins: [
     payloadCloudPlugin(),

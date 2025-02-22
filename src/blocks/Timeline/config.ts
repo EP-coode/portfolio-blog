@@ -14,6 +14,7 @@ export const timeLineItem: Field[] = [
     type: 'text',
     name: 'roleName',
     required: true,
+    localized: true
   },
   {
     type: 'text',
@@ -37,6 +38,7 @@ export const timeLineItem: Field[] = [
   {
     type: 'richText',
     name: 'description',
+    localized: true,
     editor: lexicalEditor({
       features: ({}) => {
         return [

@@ -1,0 +1,16 @@
+{
+  "workInProgressPage": {
+    "line1": "W trakcie budowy...",
+    "line2": "Wpadnij na te stronę nieco później."
+  },
+  "menu": {
+    "aboutMe": "profil",
+    "tags": "tagi",
+    "blog": "blog"
+  },
+  "hero": {
+    "start": "Cześć! Jestem Ernest Przybył,",
+    "glitchText": "web",
+    "end": "developer"
+  }
+}

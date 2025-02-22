@@ -8,10 +8,12 @@ import Particles, { initParticlesEngine } from '@tsparticles/react'
 import { loadSlim } from '@tsparticles/slim'
 import { IOptions, RecursivePartial } from '@tsparticles/engine'
 import clsx from 'clsx'
+import { useTranslations } from 'next-intl'
 
 export default function Hero({ className, ...props }: React.HTMLProps<HTMLDivElement>) {
   const glitchElemRef = useRef(null)
   const [particlesInitialized, setParticlesInitialized] = useState(false)
+  const t = useTranslations('hero');
   const glitchConfig = useMemo<GlitchPartialOptions>(
     () => ({
       playMode: 'always',
@@ -148,7 +150,7 @@ export default function Hero({ className, ...props }: React.HTMLProps<HTMLDivEle
         ></Particles>
       )}
       <h1 className={styles.heroText}>
-        Hi! I&apos;m Ernest Przybył, a <span ref={glitchElemRef}>web</span> developer
+       {t('start')} <span ref={glitchElemRef}>{t('glitchText')}</span> {t('end')}
       </h1>
       <span className={styles.barcodeText}>//module/hero...</span>
     </div>
