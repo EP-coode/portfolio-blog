@@ -6,10 +6,11 @@ import { RenderBlocks } from '@/blocks/RenderBlocks'
 import { Metadata } from 'next'
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: 'pl' | 'en' }
+  params: Promise<{ locale: 'pl' | 'en' }>
 }): Promise<Metadata> {
+  const locale = (await params).locale
   const { meta } = await queryAboutMePateContent(locale)
 
   return {
@@ -24,11 +25,8 @@ export async function generateMetadata({
   }
 }
 
-export default async function HomePage({
-  params: { locale },
-}: {
-  params: { locale: 'pl' | 'en' }
-}) {
+export default async function HomePage({ params }: { params: Promise<{ locale: 'pl' | 'en' }> }) {
+  const locale = (await params).locale
   const { layout } = await queryAboutMePateContent(locale)
 
   return (
@@ -39,7 +37,8 @@ export default async function HomePage({
   )
 }
 
-export const queryAboutMePateContent = cache(async (locale = 'en') => {
+// TODO: remove repetitive code
+const queryAboutMePateContent = cache(async (locale = 'en') => {
   const payload = await getPayload({ config: configPromise })
   const result = await payload.findGlobal({
     slug: 'aboutMe',
