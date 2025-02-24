@@ -6,8 +6,8 @@ import styles from './layout.module.css'
 
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
-import { notFound } from 'next/navigation'
-import { routing } from '@/i18n/routing'
+import { redirect } from 'next/navigation'
+import { Locale, routing } from '@/i18n/routing'
 import { TranslationSwitch } from '@/modules/common/components/TranslationSwitch'
 
 export const metadata = {
@@ -17,13 +17,15 @@ export const metadata = {
 
 export default async function RootLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode
-  params: { locale: 'en' | 'pl' }
+  params: Promise<{ locale: Locale }>
 }) {
-  if (!routing.locales.includes(locale as 'pl' | 'en')) {
-    notFound()
+  const { locale } = await params
+  if (!routing.locales.includes(locale)) {
+    // TODO: prepare not found
+   redirect('/')
   }
 
   // Providing all messages to the client

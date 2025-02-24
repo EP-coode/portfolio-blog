@@ -42,7 +42,7 @@ function Menu({ className, ...props }: React.HTMLProps<HTMLDivElement>) {
               </Link>
             </Button>
             <Button className={styles.menuButton} active={pathName == `/${locale}/tags`} asChild>
-              <Link href="/tags" title="tags">
+              <Link href="/tags" title="tags" locale={locale}>
                 {t('tags')}
               </Link>
             </Button>
