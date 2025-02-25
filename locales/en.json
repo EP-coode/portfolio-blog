@@ -12,5 +12,8 @@
     "start": "Hi! I'm Ernest Przybył, a",
     "glitchText": "web",
     "end": "developer"
+  },
+  "timeline": {
+    "now": "now"
   }
 }
