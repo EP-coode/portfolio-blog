@@ -63,6 +63,7 @@ export const TimeLine: Block = {
       type: 'text',
       name: 'title',
       label: 'Section title',
+      localized: true,
     },
     {
       type: 'array',
