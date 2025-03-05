@@ -1,7 +1,7 @@
 import { MigrateUpArgs, MigrateDownArgs, sql } from '@payloadcms/db-postgres'
 
-export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
-  await db.execute(sql`
+export async function up({ db }: MigrateUpArgs): Promise<void> {
+    await db.execute(sql`
    CREATE TABLE IF NOT EXISTS "about_me_blocks_time_line_locales" (
   	"title" varchar,
   	"id" serial PRIMARY KEY NOT NULL,
@@ -34,8 +34,8 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   ALTER TABLE "_about_me_v_blocks_time_line" DROP COLUMN IF EXISTS "title";`)
 }
 
-export async function down({ db, payload, req }: MigrateDownArgs): Promise<void> {
-  await db.execute(sql`
+export async function down({ db }: MigrateDownArgs): Promise<void> {
+    await db.execute(sql`
    DROP TABLE "about_me_blocks_time_line_locales" CASCADE;
   DROP TABLE "_about_me_v_blocks_time_line_locales" CASCADE;
   ALTER TABLE "about_me_blocks_time_line" ADD COLUMN "title" varchar;
