@@ -6,6 +6,7 @@
     src: url('/fonts/ChakaraPetch/ChakraPetch-Bold.ttf');
     font-weight: 700;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -13,6 +14,7 @@
     src: url('/fonts/ChakaraPetch/ChakraPetch-BoldItalic.ttf');
     font-weight: 700;
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
@@ -20,6 +22,7 @@
     src: url('/fonts/ChakaraPetch/ChakraPetch-SemiBold.ttf');
     font-weight: 600;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -27,6 +30,7 @@
     src: url('/fonts/ChakaraPetch/ChakraPetch-SemiBoldItalic.ttf');
     font-weight: 600;
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
@@ -34,6 +38,7 @@
     src: url('/fonts/ChakaraPetch/ChakraPetch-Medium.ttf');
     font-weight: 500;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -41,6 +46,7 @@
     src: url('/fonts/ChakaraPetch/ChakraPetch-MediumItalic.ttf');
     font-weight: 500;
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
@@ -48,6 +54,7 @@
     src: url('/fonts/ChakaraPetch/ChakraPetch-Regular.ttf');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -55,6 +62,7 @@
     src: url('/fonts/ChakaraPetch/ChakraPetch-Italic.ttf');
     font-weight: 400;
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
@@ -62,6 +70,7 @@
     src: url('/fonts/ChakaraPetch/ChakraPetch-Light.ttf');
     font-weight: 300;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -69,6 +78,7 @@
     src: url('/fonts/ChakaraPetch/ChakraPetch-LightItalic.ttf');
     font-weight: 300;
     font-style: italic;
+    font-display: swap;
 }
 
 /*============================== ChakaraPetch ================================*/
@@ -79,6 +89,7 @@
     src: url('/fonts/Rajdhani/Rajdhani-Light.ttf');
     font-weight: 300;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -86,6 +97,7 @@
     src: url('/fonts/Rajdhani/Rajdhani-Regular.ttf');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 
 
@@ -94,6 +106,7 @@
     src: url('/fonts/Rajdhani/Rajdhani-Medium.ttf');
     font-weight: 500;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -101,6 +114,7 @@
     src: url('/fonts/Rajdhani/Rajdhani-SemiBold.ttf');
     font-weight: 600;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -108,6 +122,7 @@
     src: url('/fonts/Rajdhani/Rajdhani-Bold.ttf');
     font-weight: 700;
     font-style: normal;
+    font-display: swap;
 }
 
 /*============================== Rajdhani ====================================*/
@@ -118,6 +133,7 @@
     src: url('/fonts/LibreBarcode128Text/LibreBarcode128Text-Regular.ttf');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 
 /*============================== LibreBarcode128 ====================================*/
