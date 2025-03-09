@@ -9,6 +9,7 @@ import { getMessages } from 'next-intl/server'
 import { redirect } from 'next/navigation'
 import { Locale, routing } from '@/i18n/routing'
 import { TranslationSwitch } from '@/modules/common/components/TranslationSwitch'
+import Preloads from '@/app/(frontend)/[locale]/preloads'
 
 export const metadata = {
   title: 'EP: Cyber Blog ⚡',
@@ -25,7 +26,7 @@ export default async function RootLayout({
   const { locale } = await params
   if (!routing.locales.includes(locale)) {
     // TODO: prepare not found
-   redirect('/')
+    redirect('/')
   }
 
   // Providing all messages to the client
@@ -38,6 +39,7 @@ export default async function RootLayout({
         <head>
           <link rel="shortcut icon" href="/icons/favicon.ico" />
           <link rel="shortcut icon" href="/icons/favicon.svg" type="image/svg+xml" />
+          <Preloads></Preloads>
         </head>
         <body className={styles.mainLayout}>
           <Menu className={styles.mainNav}></Menu>
