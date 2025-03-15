@@ -46,6 +46,8 @@
 
   --navHeight: 86px;
 
+  color-scheme: dark;
+
   @media screen and (min-width: 520px) {
     --navHeight: 96px;
   }
