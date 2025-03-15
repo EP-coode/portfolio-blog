@@ -46,6 +46,20 @@ const Preloads = () => {
         crossOrigin=""
         type="font/ttf"
       />
+      <link
+        rel="preload"
+        href="/fonts/Rajdhani/Rajdhani-Regular.ttf"
+        as="font"
+        crossOrigin=""
+        type="font/ttf"
+      />
+      <link
+        rel="preload"
+        href="/fonts/Rajdhani/Rajdhani-Bold.ttf"
+        as="font"
+        crossOrigin=""
+        type="font/ttf"
+      />
     </head>
   )
 }

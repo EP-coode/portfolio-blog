@@ -9,6 +9,8 @@ import { TechListBlock } from './TechList/TechListBlock'
 import { TimelineBlock } from './Timeline/TimeineBlock'
 
 import styles from './RenderBlocks.module.css'
+import MediaBlock from '@/blocks/Media/MediaBlock'
+import CodeBlock from '@/blocks/Code/CodeBlock'
 
 type ContentBlocks = ContentBlockProps | TechListBlockProps | TimeLineBlockProps
 
@@ -16,6 +18,8 @@ const contentBlocks = {
   content: ContentBlock,
   techList: TechListBlock,
   timeLine: TimelineBlock,
+  mediaBlock: MediaBlock,
+  code: CodeBlock,
 }
 
 export const RenderBlocks: React.FC<{ blocks: ContentBlocks[] | null | undefined }> = ({

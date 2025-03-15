@@ -133,7 +133,7 @@
     src: url('/fonts/LibreBarcode128Text/LibreBarcode128Text-Regular.ttf');
     font-weight: 400;
     font-style: normal;
-    font-display: swap;
+    font-display: block;
 }
 
 /*============================== LibreBarcode128 ====================================*/

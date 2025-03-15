@@ -8,18 +8,12 @@ import { TimeLine as TimelineBlockProps } from '@/payload-types'
 import { RichText as RichTextWithoutBlocks } from '@payloadcms/richtext-lexical/react'
 import clsx from 'clsx'
 import { format } from 'date-fns'
-import { pl, enUS } from 'date-fns/locale'
 import { useLocale, useTranslations } from 'next-intl'
-import { Locale } from '@/i18n/routing'
+import { dateFormattersMap, Locale } from '@/i18n/routing'
 
 import { useIntersectionObserver } from '@/modules/common/hooks/useIntersectionObserver'
 
 import styles from './TimelineBlock.module.css'
-
-const localeMap = {
-  pl: pl,
-  en: enUS,
-}
 
 type TimeLineItemProps = NonNullable<TimelineBlockProps['timeLineItems']>[number]
 const DATE_FORMAT = 'MMM yyyy'
@@ -56,10 +50,10 @@ const TimelineBlockItem = ({
   })
 
   const startDateFormated = startDate
-    ? format(new Date(startDate), DATE_FORMAT, { locale: localeMap[locale] })
+    ? format(new Date(startDate), DATE_FORMAT, { locale: dateFormattersMap[locale] })
     : null
   const endDateFormated = endDate
-    ? format(new Date(endDate), DATE_FORMAT, { locale: localeMap[locale] })
+    ? format(new Date(endDate), DATE_FORMAT, { locale: dateFormattersMap[locale] })
     : t('now')
 
   return (

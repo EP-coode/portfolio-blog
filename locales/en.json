@@ -15,5 +15,9 @@
   },
   "timeline": {
     "now": "now"
+  },
+  "blogListing": {
+    "title": "Blog",
+    "subTitle": "This is the place where I record tricks, workarounds, and solutions discovered in my daily work as a web developer."
   }
 }

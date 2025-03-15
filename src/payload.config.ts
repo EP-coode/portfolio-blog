@@ -9,6 +9,8 @@ import sharp from 'sharp'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
+import { PostTag } from '@/collections/PostTag'
+import { BlogPost } from '@/collections/BlogPost'
 
 import { s3Storage } from '@payloadcms/storage-s3'
 import { AboutMe } from './globals/AboutMe'
@@ -31,7 +33,7 @@ export default buildConfig({
       globals: ['aboutMe'],
     },
   },
-  collections: [Users, Media],
+  collections: [Users, Media, PostTag, BlogPost],
   globals: [AboutMe],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',

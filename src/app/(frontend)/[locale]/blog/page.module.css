@@ -1,0 +1,13 @@
+.blogListLayout {
+    margin-top: calc(var(--navHeight) + 20px);
+
+    @media screen and (min-width: 520px) {
+        margin-top: calc(var(--navHeight) + 40px);
+    }
+}
+
+.blogList {
+    display: grid;
+    gap: var(--contentGutter);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}

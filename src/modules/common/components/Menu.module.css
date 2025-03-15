@@ -59,6 +59,7 @@
 .logoText {
   color: var(--color-cyberYellow);
   font-size: 1.7rem;
+  font-family: var(--font-chakaraPetch), monospace;
   display: none;
 
   @media screen and (min-width: 520px) {

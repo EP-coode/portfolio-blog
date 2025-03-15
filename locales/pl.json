@@ -15,5 +15,9 @@
   },
   "timeline": {
     "now": "obecnie"
+  },
+  "blogListing": {
+    "title": "Blog",
+    "subTitle": "To jest miejsce, w którym zapisuję triki, obejścia i rozwiązania odkrywane w mojej codziennej pracy jako programista webowy."
   }
 }

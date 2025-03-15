@@ -1,0 +1,12 @@
+.tag {
+    --tagColor: var(--color-cyberCyan);
+
+    color: var(--tagColor);
+    box-shadow: inset 0 0 0.3rem var(--tagColor);
+    background-color: var(--color-darkGray);
+    border: 1px solid var(--tagColor);
+    padding: 6px;
+    font-family: var(--font-chakaraPetch), monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+}

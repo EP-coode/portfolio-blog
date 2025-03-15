@@ -17,6 +17,7 @@
   transition: all;
   transition-duration: 100ms;
   font-size: 0.8rem;
+  font-family: var(--font-chakaraPetch), monospace;
   text-transform: uppercase;
   white-space: nowrap;
   user-select: none;

@@ -13,6 +13,8 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
+    'post-tag': PostTag;
+    'blog-post': BlogPost;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -21,6 +23,8 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    'post-tag': PostTagSelect<false> | PostTagSelect<true>;
+    'blog-post': BlogPostSelect<false> | BlogPostSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -99,6 +103,92 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "post-tag".
+ */
+export interface PostTag {
+  id: number;
+  tagLabel: string;
+  tagColor: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blog-post".
+ */
+export interface BlogPost {
+  id: number;
+  title: string;
+  slug: string;
+  shortDescription: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  heroImage?: (number | null) | Media;
+  tags?: (number | PostTag)[] | null;
+  publishedAt?: string | null;
+  content?: (ContentBlock | CodeBlock | MediaBlock)[] | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ContentBlock".
+ */
+export interface ContentBlock {
+  richText?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'content';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CodeBlock".
+ */
+export interface CodeBlock {
+  language?: ('typescript' | 'javascript' | 'go' | 'html' | 'css' | 'SCSS') | null;
+  code: string;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'code';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "MediaBlock".
+ */
+export interface MediaBlock {
+  media: number | Media;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'mediaBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -111,6 +201,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'media';
         value: number | Media;
+      } | null)
+    | ({
+        relationTo: 'post-tag';
+        value: number | PostTag;
+      } | null)
+    | ({
+        relationTo: 'blog-post';
+        value: number | BlogPost;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -189,6 +287,65 @@ export interface MediaSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "post-tag_select".
+ */
+export interface PostTagSelect<T extends boolean = true> {
+  tagLabel?: T;
+  tagColor?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blog-post_select".
+ */
+export interface BlogPostSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  shortDescription?: T;
+  heroImage?: T;
+  tags?: T;
+  publishedAt?: T;
+  content?:
+    | T
+    | {
+        content?: T | ContentBlockSelect<T>;
+        code?: T | CodeBlockSelect<T>;
+        mediaBlock?: T | MediaBlockSelect<T>;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ContentBlock_select".
+ */
+export interface ContentBlockSelect<T extends boolean = true> {
+  richText?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CodeBlock_select".
+ */
+export interface CodeBlockSelect<T extends boolean = true> {
+  language?: T;
+  code?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "MediaBlock_select".
+ */
+export interface MediaBlockSelect<T extends boolean = true> {
+  media?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents_select".
  */
 export interface PayloadLockedDocumentsSelect<T extends boolean = true> {
@@ -234,30 +391,6 @@ export interface AboutMe {
   _status?: ('draft' | 'published') | null;
   updatedAt?: string | null;
   createdAt?: string | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "ContentBlock".
- */
-export interface ContentBlock {
-  richText?: {
-    root: {
-      type: string;
-      children: {
-        type: string;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'content';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -334,15 +467,6 @@ export interface AboutMeSelect<T extends boolean = true> {
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "ContentBlock_select".
- */
-export interface ContentBlockSelect<T extends boolean = true> {
-  richText?: T;
-  id?: T;
-  blockName?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

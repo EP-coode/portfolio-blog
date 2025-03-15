@@ -1,0 +1,83 @@
+.tileWrapper {
+    background-color: var(--color-lightGray);
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    z-index: var(--layer-base);
+    overflow-y: hidden;
+    border: 1px solid transparent;
+    display: flex;
+    flex-direction: column;
+
+    text-decoration: none;
+    color: var(--color-neutral);
+}
+
+.tileWrapper:hover {
+    transform: scale(1.05);
+    border: 1px solid var(--color-cyberRed);
+    background-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0) 100%), radial-gradient(90% 60% at 50% 134%, color-mix(in srgb, var(--color-cyberRed) 35%, transparent) 0%, transparent 100%);
+}
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2/1;
+}
+
+.blogIdFlag {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    background-color: var(--color-black);
+    font-size: 1.3rem;
+    padding: 2px;
+    font-family: var(--font-barcode128Text), monospace;
+    writing-mode: vertical-rl;
+}
+
+.tileContent {
+    padding: 1rem;
+    flex-grow: 1;
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.tileContent h2 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.tileContent p:first-child {
+    margin-top: 0;
+}
+
+.tileContent p:last-child {
+    margin-bottom: 0;
+}
+
+.tagContainer {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-grow: 1;
+    align-items: end;
+    justify-content: end;
+    margin-top: 0.5rem;
+}
+
+.date {
+    justify-self: end;
+    color: var(--color-alabaster);
+    font-size: 0.9rem;
+    opacity: 0.8;
+    font-weight: 700;
+}

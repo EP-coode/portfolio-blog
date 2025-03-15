@@ -1,181 +1,182 @@
 /*File contains overrides to default html elements*/
 @layer base {
-  /*============== Typography ===============*/
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--font-chakaraPetch), monospace;
-    color: var(--color-cyberYellow);
-    font-weight: 600;
-    text-align: left;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-
-  h3 {
-    font-size: 1.8rem;
-  }
-
-  h4 {
-    font-size: 1.5rem;
-  }
-
-  h5 {
-    font-size: 1.2rem;
-  }
-
-  h6 {
-    font-size: 1rem;
-  }
-
-  /*============== Typography ===============*/
-  html {
-    overflow-y: scroll;
-  }
-
-  body {
-    font-family: var(--font-chakaraPetch), serif;
-    font-size: var(--text-base);
-    color: var(--color-alabaster);
-    text-align: justify;
-    background-color: var(--color-darkGray);
-    margin: 0;
-    padding: 0;
-  }
-
-  main {
-    display: block;
-  }
-
-  *,
-  ::before,
-  ::after {
-    box-sizing: border-box;
-  }
-
-  a {
-    color: var(--color-cyberCyan);
-    text-decoration: underline;
-
-    &:hover {
-      color: var(--color-cyberRed);
+    /*============== Typography ===============*/
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-chakaraPetch), monospace;
+        color: var(--color-cyberYellow);
+        font-weight: 600;
+        text-align: left;
     }
-  }
 
-  button {
-    font-family: inherit;
-  }
+    h1 {
+        font-size: 2.5rem;
+    }
 
-  b {
-    color: var(--color-neutral);
-  }
+    h2 {
+        font-size: 2rem;
+    }
 
-  i {
-    font-weight: 200;
-  }
+    h3 {
+        font-size: 1.8rem;
+    }
 
-  ul {
-    list-style-type: square;
-    list-style-position: inside;
+    h4 {
+        font-size: 1.5rem;
+    }
 
-    li:has(> ul, > ol) {
-      list-style: none;
+    h5 {
+        font-size: 1.2rem;
+    }
+
+    h6 {
+        font-size: 1rem;
+    }
+
+    /*============== Typography ===============*/
+    html {
+        scroll-behavior: smooth;
+        overflow-y: scroll;
+    }
+
+    body {
+        font-family: var(--font-rajdhani), sans-serif;
+        font-size: var(--text-base);
+        color: var(--color-neutral);
+        text-align: justify;
+        background-color: var(--color-darkGray);
+        margin: 0;
+        padding: 0;
+    }
+
+    main {
+        display: block;
+    }
+
+    *,
+    ::before,
+    ::after {
+        box-sizing: border-box;
+    }
+
+    a {
+        color: var(--color-cyberCyan);
+        text-decoration: underline;
+
+        &:hover {
+            color: var(--color-cyberRed);
+        }
+    }
+
+    button {
+        font-family: inherit;
+    }
+
+    b {
+        color: var(--color-neutral);
+    }
+
+    i {
+        font-weight: 200;
     }
 
     ul {
-      list-style-type: circle;
-      margin-left: 1rem;
-    }
+        list-style-type: square;
+        list-style-position: inside;
 
-    & li::marker {
-      color: var(--color-cyberCyan);
-    }
-  }
+        li:has(> ul, > ol) {
+            list-style: none;
+        }
 
-  ol {
-    list-style-type: decimal;
-    list-style-position: inside;
+        ul {
+            list-style-type: circle;
+            margin-left: 1rem;
+        }
 
-    li:has(> ul, > ol) {
-      list-style: none;
+        & li::marker {
+            color: var(--color-cyberCyan);
+        }
     }
 
     ol {
-      list-style-type: lower-alpha;
-      margin-left: 1rem;
+        list-style-type: decimal;
+        list-style-position: inside;
+
+        li:has(> ul, > ol) {
+            list-style: none;
+        }
+
+        ol {
+            list-style-type: lower-alpha;
+            margin-left: 1rem;
+        }
+
+        & li::marker {
+            color: var(--color-cyberCyan);
+        }
     }
 
-    & li::marker {
-      color: var(--color-cyberCyan);
-    }
-  }
-
-  hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid color-mix(in srgb, var(--color-alabaster) 50%, transparent);
-    margin: 1.5rem 0;
-    padding: 0;
-  }
-
-  blockquote {
-    position: relative;
-    font-style: italic;
-    margin: 0;
-    padding: 1rem 0px 1rem 2rem;
-    background-color: var(--color-lightGray);
-
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 2px;
-      background-color: var(--color-cyberYellow);
+    hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid color-mix(in srgb, var(--color-alabaster) 50%, transparent);
+        margin: 1.5rem 0;
+        padding: 0;
     }
 
-    &:before {
-      content: '"';
-      display: block;
-      position: absolute;
-      left: 0.5rem;
-      top: 0;
-      height: 100%;
-      line-height: 1;
-      font-size: 3rem;
-      font-weight: 200;
-      opacity: 0.5;
+    blockquote {
+        position: relative;
+        font-style: italic;
+        margin: 0;
+        padding: 1rem 0px 1rem 2rem;
+        background-color: var(--color-lightGray);
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: var(--color-cyberYellow);
+        }
+
+        &:before {
+            content: '"';
+            display: block;
+            position: absolute;
+            left: 0.5rem;
+            top: 0;
+            height: 100%;
+            line-height: 1;
+            font-size: 3rem;
+            font-weight: 200;
+            opacity: 0.5;
+        }
     }
-  }
 
-  ::-webkit-scrollbar {
-    width: 0.3rem;
-  }
+    ::-webkit-scrollbar {
+        width: 0.3rem;
+    }
 
-  ::-webkit-scrollbar-track {
-    background-color: var(--color-lightGray);
-  }
+    ::-webkit-scrollbar-track {
+        background-color: var(--color-lightGray);
+    }
 
-  ::-webkit-scrollbar-thumb {
-    background-color: var(--color-cyberYellow);
-    cursor: grab;
-  }
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--color-cyberYellow);
+        cursor: grab;
+    }
 
-  ::selection {
-    background: color-mix(in srgb, var(--color-black) 35%, transparent);
-    color: var(--color-cyberRed);
-    text-shadow: color-mix(in srgb, var(--color-cyberRed) 50%, transparent) 1px 1px 5px;
-  }
+    ::selection {
+        background: color-mix(in srgb, var(--color-black) 35%, transparent);
+        color: var(--color-cyberRed);
+        text-shadow: color-mix(in srgb, var(--color-cyberRed) 50%, transparent) 1px 1px 5px;
+    }
 }

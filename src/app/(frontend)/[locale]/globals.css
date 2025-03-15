@@ -23,7 +23,7 @@
   --font-chakaraPetch: 'ChakaraPetch', monospace;
   --font-rajdhani: 'Rajdhani', sans-serif;
   --font-barcode128Text: 'LibreBarcode128Text', monospace;
-  --text-base: 18px;
+  --text-base: 20px;
   --text-button: 20px;
 
   /*Content*/
@@ -44,8 +44,10 @@
   --lg: 1280px;
   --xl: 1640px;
 
+  /* Other variables*/
   --navHeight: 86px;
 
+  /* Other settings */
   color-scheme: dark;
 
   @media screen and (min-width: 520px) {
