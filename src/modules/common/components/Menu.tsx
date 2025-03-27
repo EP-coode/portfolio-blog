@@ -24,7 +24,12 @@ function Menu({ className, ...props }: React.HTMLProps<HTMLDivElement>) {
     <nav className={clsx(styles.menu, className)} {...props}>
       <div className={styles.menuContent}>
         <div className={styles.menuLogo}>
-          <Link href="/" className={clsx(styles.logoLink, 'svgDrawLogoAnimation')} title="home">
+          <Link
+            href="/"
+            prefetch={true}
+            className={clsx(styles.logoLink, 'svgDrawLogoAnimation')}
+            title="home"
+          >
             <SvgLogo className={styles.logoImg}></SvgLogo>
           </Link>
           <span className={styles.logoText}>Ernest Przybył</span>
@@ -37,12 +42,12 @@ function Menu({ className, ...props }: React.HTMLProps<HTMLDivElement>) {
               active={pathName === `/${locale}`}
               asChild
             >
-              <Link href="/" title="home" locale={locale}>
+              <Link href="/" title="home" locale={locale} prefetch={true}>
                 {t('aboutMe')}
               </Link>
             </Button>
             <Button className={styles.menuButton} active={pathName == `/${locale}/tags`} asChild>
-              <Link href="/tags" title="tags" locale={locale}>
+              <Link href="/tags" title="tags" locale={locale} prefetch={true}>
                 {t('tags')}
               </Link>
             </Button>
@@ -52,7 +57,7 @@ function Menu({ className, ...props }: React.HTMLProps<HTMLDivElement>) {
               rightCornerCut="top"
               asChild
             >
-              <Link href="/blog" title="blog" locale={locale}>
+              <Link href="/blog" title="blog" locale={locale} prefetch={true}>
                 {t('blog')}
               </Link>
             </Button>

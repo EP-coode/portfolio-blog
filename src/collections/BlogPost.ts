@@ -21,6 +21,7 @@ export const BlogPost: CollectionConfig = {
       name: 'title',
       type: 'text',
       required: true,
+      localized: true,
     },
     // TODO: create custom field for slug
     {
@@ -38,11 +39,17 @@ export const BlogPost: CollectionConfig = {
         },
       }),
       required: true,
+      localized: true,
     },
     {
       name: 'heroImage',
       type: 'upload',
       relationTo: 'media',
+    },
+    {
+      name: 'heroCaption',
+      type: 'text',
+      localized: true,
     },
     {
       name: 'tags',

@@ -18,6 +18,14 @@
   },
   "blogListing": {
     "title": "Blog",
+    "empty": "Na razie jest tu pusto.",
     "subTitle": "To jest miejsce, w którym zapisuję triki, obejścia i rozwiązania odkrywane w mojej codziennej pracy jako programista webowy."
+  },
+  "blogDetail": {
+    "return": "Powrót"
+  },
+  "codeBlock": {
+    "copy": "Kopiuj",
+    "copied": "Skopiowano!"
   }
 }

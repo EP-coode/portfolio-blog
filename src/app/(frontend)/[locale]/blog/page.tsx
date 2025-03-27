@@ -8,6 +8,11 @@ import style from './page.module.css'
 import clsx from 'clsx'
 import { getTranslations } from 'next-intl/server'
 
+// Revalidate each 1 day
+export const revalidate = 86400
+
+export { generateMetadata } from '../page'
+
 export default async function BlogPage({ params }: { params: Promise<{ locale: Locale }> }) {
   const locale = (await params).locale
   const result = await getBlogListing(locale)
@@ -23,6 +28,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: L
         {result.docs.map((doc, i) => (
           <BlogPostTile key={i} tileData={doc} />
         ))}
+        {result.docs.length <= 0 && <span>{t('empty')}</span>}
       </div>
     </div>
   )

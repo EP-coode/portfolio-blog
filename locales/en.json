@@ -18,6 +18,14 @@
   },
   "blogListing": {
     "title": "Blog",
+    "empty": "Nothing to show so far.",
     "subTitle": "This is the place where I record tricks, workarounds, and solutions discovered in my daily work as a web developer."
+  },
+  "blogDetail": {
+    "return": "Return"
+  },
+  "codeBlock": {
+    "copy": "Copy",
+    "copied": "Copied!"
   }
 }

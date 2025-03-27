@@ -36,6 +36,10 @@ export const Code: Block = {
       ],
     },
     {
+      name: 'filePath',
+      type: 'text',
+    },
+    {
       name: 'code',
       type: 'code',
       label: false,

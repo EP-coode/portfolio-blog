@@ -1,0 +1,39 @@
+.codeBlock {
+    --codeBlockGutter: 12px;
+
+    background-color: var(--color-black);
+    font-size: 1rem;
+    position: relative;
+}
+
+.codeBlock pre {
+    overflow-x: auto;
+    padding: 0 var(--codeBlockGutter) var(--codeBlockGutter) var(--codeBlockGutter);
+}
+
+.codeBlockLine {
+    display: table-row;
+}
+
+.codeBlockLineNumber {
+    display: table-cell;
+    user-select: none;
+    text-align: right;
+    color: color-mix(in srgb, var(--color-white), transparent 25%);
+}
+
+.header {
+    margin-bottom: var(--codeBlockGutter);
+    display: flex;
+    justify-content: space-between;
+    padding: var(--codeBlockGutter) var(--codeBlockGutter) 0 var(--codeBlockGutter);
+}
+
+.header span {
+    color: color-mix(in srgb, var(--color-white), transparent 50%);
+}
+
+.codeBlockLineContent {
+    display: table-cell;
+    padding-left: 16px;
+}

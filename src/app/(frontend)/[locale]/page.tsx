@@ -6,8 +6,8 @@ import { RenderBlocks } from '@/blocks/RenderBlocks'
 import { Metadata } from 'next'
 import { Locale, SUPPORTED_LOCALES } from '@/i18n/routing'
 
-// Revalidate each 2 minutes
-export const revalidate = 120
+// Revalidate each 5 minutes
+export const revalidate = 300;
 
 export async function generateStaticParams() {
   return SUPPORTED_LOCALES.map((locale) => ({

@@ -22,7 +22,7 @@ const BlogPostTile = ({ tileData, className, ...props }: IBlogTileProps) => {
 
   const heroImgUrl =
     !!tileData.heroImage && typeof tileData.heroImage !== 'number' && tileData.heroImage.url
-      ? tileData.heroImage.url
+      ? tileData.heroImage?.sizes?.medium?.url || tileData.heroImage.url
       : null
 
   const heroImgAlt =
@@ -35,7 +35,12 @@ const BlogPostTile = ({ tileData, className, ...props }: IBlogTileProps) => {
   const tags = tileData.tags?.filter((t) => typeof t !== 'number') ?? []
 
   return (
-    <Link href={`/blog/${tileData.slug}`} className={clsx(className, style.tileWrapper)} {...props}>
+    <Link
+      href={`/blog/${tileData.slug}`}
+      className={clsx(className, style.tileWrapper)}
+      prefetch={true}
+      {...props}
+    >
       <div className={style.imageWrapper}>
         {heroImgUrl && heroImgAlt && <Image src={heroImgUrl} alt={heroImgAlt} fill></Image>}
         {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}

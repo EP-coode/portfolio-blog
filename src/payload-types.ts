@@ -100,6 +100,32 @@ export interface Media {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
+  sizes?: {
+    blur?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+    medium?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+    large?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+  };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -136,6 +162,7 @@ export interface BlogPost {
     [k: string]: unknown;
   };
   heroImage?: (number | null) | Media;
+  heroCaption?: string | null;
   tags?: (number | PostTag)[] | null;
   publishedAt?: string | null;
   content?: (ContentBlock | CodeBlock | MediaBlock)[] | null;
@@ -172,6 +199,7 @@ export interface ContentBlock {
  */
 export interface CodeBlock {
   language?: ('typescript' | 'javascript' | 'go' | 'html' | 'css' | 'SCSS') | null;
+  filePath?: string | null;
   code: string;
   id?: string | null;
   blockName?: string | null;
@@ -183,6 +211,7 @@ export interface CodeBlock {
  */
 export interface MediaBlock {
   media: number | Media;
+  caption?: string | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'mediaBlock';
@@ -284,6 +313,40 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+  sizes?:
+    | T
+    | {
+        blur?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+        medium?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+        large?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+      };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -304,6 +367,7 @@ export interface BlogPostSelect<T extends boolean = true> {
   slug?: T;
   shortDescription?: T;
   heroImage?: T;
+  heroCaption?: T;
   tags?: T;
   publishedAt?: T;
   content?:
@@ -331,6 +395,7 @@ export interface ContentBlockSelect<T extends boolean = true> {
  */
 export interface CodeBlockSelect<T extends boolean = true> {
   language?: T;
+  filePath?: T;
   code?: T;
   id?: T;
   blockName?: T;
@@ -341,6 +406,7 @@ export interface CodeBlockSelect<T extends boolean = true> {
  */
 export interface MediaBlockSelect<T extends boolean = true> {
   media?: T;
+  caption?: T;
   id?: T;
   blockName?: T;
 }

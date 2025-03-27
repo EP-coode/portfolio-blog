@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
       // Disallow indexing util development is finished
-      disallow: ['/tags', '/blog', '/admin', '/admin/*'],
+      disallow: ['/tags', '/admin', '/admin/*'],
     },
     sitemap: `${process.env.BASE_URL}/sitemap.xml`,
   }

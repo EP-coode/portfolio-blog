@@ -14,7 +14,8 @@ import { TimeLine } from '@/blocks/Timeline/config'
 export const AboutMe: GlobalConfig = {
   slug: 'aboutMe',
   versions: {
-    drafts: true
+    drafts: true,
+    max: 50,
   },
   fields: [
     {

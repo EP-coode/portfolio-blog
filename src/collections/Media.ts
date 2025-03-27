@@ -12,5 +12,35 @@ export const Media: CollectionConfig = {
       required: true,
     },
   ],
-  upload: true,
+  upload: {
+    imageSizes: [
+      {
+        width: 100,
+        crop: 'center',
+        name: 'blur',
+        formatOptions: {
+          format: 'avif',
+          options: {
+            quality: 50,
+          },
+        },
+      },
+      {
+        width: 900,
+        crop: 'center',
+        name: 'medium',
+        formatOptions: {
+          format: 'avif',
+        },
+      },
+      {
+        width: 1200,
+        crop: 'center',
+        name: 'large',
+        formatOptions: {
+          format: 'avif',
+        },
+      },
+    ],
+  },
 }
