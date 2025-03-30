@@ -9,5 +9,5 @@
 .blogList {
     display: grid;
     gap: var(--contentGutter);
-    grid-template-columns: repeat(auto-fit, minmax(300px, 600px));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
