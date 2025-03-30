@@ -41,4 +41,5 @@
 .figure {
     width: 100%;
     height: min-content;
+    max-height: 700px;
 }

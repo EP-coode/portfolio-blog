@@ -15,7 +15,7 @@ import { Metadata } from 'next'
 
 // Revalidate each 2 days
 export const revalidate = 172800
-export const dynamicParams = false
+// export const dynamicParams = false
 
 const DATE_FORMAT = 'd MMMM yyyy'
 
@@ -101,7 +101,7 @@ const BlogDetail = async ({ params }: BlogPageProps) => {
         {blogPost?.tags?.map((tag) => {
           return (
             typeof tag !== 'number' && (
-              <TechTag color={tag.tagColor} content={tag.tagLabel}></TechTag>
+              <TechTag color={tag.tagColor} content={tag.tagLabel} key={tag.id}></TechTag>
             )
           )
         })}

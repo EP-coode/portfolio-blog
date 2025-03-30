@@ -1,8 +1,9 @@
 import React from 'react'
 
+// Put this in head
 const Preloads = () => {
   return (
-    <head>
+    <>
       {/* Fonts */}
       <link
         rel="preload"
@@ -60,7 +61,7 @@ const Preloads = () => {
         crossOrigin=""
         type="font/ttf"
       />
-    </head>
+    </>
   )
 }
 
