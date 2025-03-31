@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
     keywords: tags
       ?.filter((tag) => typeof tag !== 'number')
       .map((tag) => tag.tagLabel)
-      .join(','),
+      .join(''),
     description,
     openGraph: {
       type: 'website',
