@@ -21,6 +21,7 @@ export const TechListBlock = (params: TechListBlockProps) => {
                   alt={techIcon.alt}
                   className={styles.itemIcon}
                   fill
+                  unoptimized={true}
                 ></Image>
               </div>
             )

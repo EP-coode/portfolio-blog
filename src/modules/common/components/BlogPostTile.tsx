@@ -42,7 +42,7 @@ const BlogPostTile = ({ tileData, className, ...props }: IBlogTileProps) => {
       {...props}
     >
       <div className={style.imageWrapper}>
-        {heroImgUrl && heroImgAlt && <Image src={heroImgUrl} alt={heroImgAlt} fill objectFit={'cover'}></Image>}
+        {heroImgUrl && heroImgAlt && <Image src={heroImgUrl} alt={heroImgAlt} fill objectFit={'cover'} unoptimized={true}></Image>}
         {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}
         <span className={style.blogIdFlag}>//Blog/00{tileData.id}...</span>
       </div>
