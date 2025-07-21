@@ -19,6 +19,8 @@ export const revalidate = 172800
 
 const DATE_FORMAT = 'd MMMM yyyy'
 
+const baseUrl = process.env.BASE_URL || 'https://eprzybyl.eu'
+
 interface BlogPageProps {
   params: Promise<{ locale: Locale; slug: string }>
 }
@@ -28,7 +30,7 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
   const { title, heroImage, shortDescription, tags } = await queryBlogDetail(locale, slug)
 
   const getRichContentText = (c: any) =>
-      c?.text || '' + c?.children?.map((c2: any) => getRichContentText(c2))
+    c?.text || '' + c?.children?.map((c2: any) => getRichContentText(c2))
 
   const description = shortDescription?.root?.children?.map((c) => getRichContentText(c)).join('')
 
@@ -45,13 +47,18 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
       url: `/${locale}/blog/${slug}`,
       title,
       description,
-      images: [
-        {
-          url: (typeof heroImage != 'number' && heroImage?.url) || '',
-          alt: (typeof heroImage != 'number' && heroImage?.alt) || '',
-          type: (typeof heroImage != 'number' && heroImage?.mimeType) || '',
-        },
-      ],
+      images:
+        heroImage instanceof Object && heroImage?.url
+          ? [
+              {
+                url: `${baseUrl}${heroImage.url}`,
+                alt: heroImage?.alt || '',
+                type: heroImage?.mimeType || '',
+                width: heroImage?.width || undefined,
+                height: heroImage?.height || undefined, 
+              },
+            ]
+          : undefined,
     },
   }
 }
