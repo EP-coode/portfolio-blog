@@ -12,6 +12,7 @@ import { ArrowLeftIcon } from '@radix-ui/react-icons'
 import { getTranslations } from 'next-intl/server'
 import BorderImage from '@/modules/common/ui/BorderImage'
 import { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 
 // Revalidate each 2 days
 export const revalidate = 172800
@@ -25,6 +26,8 @@ interface BlogPageProps {
   params: Promise<{ locale: Locale; slug: string }>
 }
 
+const GiscusComments = dynamic(() => import('@/modules/common/components/GiscusBlogComments'))
+
 export async function generateMetadata({ params }: BlogPageProps): Promise<Metadata> {
   const { locale, slug } = await params
   const { title, heroImage, shortDescription, tags } = await queryBlogDetail(locale, slug)
@@ -33,8 +36,6 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
     c?.text || '' + c?.children?.map((c2: any) => getRichContentText(c2))
 
   const description = shortDescription?.root?.children?.map((c) => getRichContentText(c)).join('')
-
-  console.log(description)
 
   return {
     keywords: tags
@@ -55,7 +56,7 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
                 alt: heroImage?.alt || '',
                 type: heroImage?.mimeType || '',
                 width: heroImage?.width || undefined,
-                height: heroImage?.height || undefined, 
+                height: heroImage?.height || undefined,
               },
             ]
           : undefined,
@@ -118,6 +119,8 @@ const BlogDetail = async ({ params }: BlogPageProps) => {
         <BorderImage media={blogPost.heroImage} caption={blogPost.heroCaption ?? undefined} />
       )}
       {blogPost.content && <RenderBlocks blocks={blogPost.content} />}
+      <hr/>
+      <GiscusComments />
     </article>
   )
 }
