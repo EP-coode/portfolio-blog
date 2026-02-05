@@ -42,7 +42,13 @@ function Footer() {
             <DiscordLogoIcon className={styles.linkIcon}></DiscordLogoIcon>
           </Link>
         </div>
-        <div className={styles.footerCopyRight}> © 2025 All Rights Reserved Ernest Przybył</div>
+        <div className={styles.footerCopyRight}>
+          © 2025 All Rights Reserved Ernest Przybył {'('}
+          <Link href="https://calisia-code.pl/" target="_blank" title="calisia-code.pl">
+            calisia-code.pl
+          </Link>
+          {')'}
+        </div>
       </div>
     </footer>
   )
